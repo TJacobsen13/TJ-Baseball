@@ -118,7 +118,14 @@
   /* Booking */
   .book { background: var(--ink); color: var(--paper); clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%); padding-top: 120px; }
   .book h2 { color: var(--paper); }
-  .book-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 56px; align-items: start; }
+  .book-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 56px; align-items: start; margin-bottom: 36px; }
+  .book-grid > div { min-width: 0; }
+  .contact a { overflow-wrap: anywhere; }
+  .fine-light { font-size: 14px; opacity: .7; margin: 0; }
+  .cal-card { background: var(--white); color: var(--text); border-radius: 10px; padding: 12px; min-height: 560px; }
+  #cal-inline { width: 100%; min-height: 520px; overflow: auto; }
+  .cal-fallback { font-size: 14px; color: var(--muted); text-align: center; margin: 12px 0 6px; }
+  .cal-fallback a { color: var(--ink); font-weight: 600; }
   .book .lead { opacity: .85; margin: 0 0 28px; }
   .contact { list-style: none; padding: 0; margin: 0 0 28px; display: grid; gap: 14px; }
   .contact li { display: flex; gap: 12px; align-items: center; font-weight: 600; }
@@ -302,73 +309,27 @@
   </section>
 
   <section id="book" class="book">
-    <div class="wrap book-grid">
-      <div>
-        <h2>Book Your Spot Today</h2>
-        <p class="lead">Lessons are held at the TCT Sting facility. Send a request and I'll get back to you to confirm a time.</p>
-        <p class="lead"><strong>Available:</strong> Mon–Fri after 4 pm · Sat &amp; Sun mornings</p>
-        <ul class="contact">
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+18479608283">(847) 960-8283</a></li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg><a href="mailto:tjbaseballgroup@yahoo.com">tjbaseballgroup@yahoo.com</a></li>
-          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://maps.google.com/?q=201+Berg+St,+Algonquin,+IL+60102" target="_blank" rel="noopener">201 Berg St, Algonquin, IL 60102</a></li>
-        </ul>
-        <ol class="steps">
-          <li>Fill out the request form.</li>
-          <li>Coach TJ reaches out to confirm the day and time.</li>
-          <li>Show up at TCT Sting ready to work.</li>
-        </ol>
+    <div class="wrap">
+      <div class="book-grid">
+        <div>
+          <h2>Book Your Spot Today</h2>
+          <p class="lead">Pick a lesson, then choose any open time on the calendar. You'll get a confirmation email right away. Taken times are hidden automatically.</p>
+          <p class="lead"><strong>Available:</strong> Mon–Fri after 4 pm · Sat &amp; Sun mornings</p>
+        </div>
+        <div>
+          <ul class="contact">
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+18479608283">(847) 960-8283</a></li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg><a href="mailto:tjbaseballgroup@yahoo.com">tjbaseballgroup@yahoo.com</a></li>
+            <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://maps.google.com/?q=201+Berg+St,+Algonquin,+IL+60102" target="_blank" rel="noopener">201 Berg St, Algonquin, IL 60102</a></li>
+          </ul>
+          <p class="fine-light">No payment online. Payment is collected at the lesson.</p>
+        </div>
       </div>
 
-      <form id="booking-form" novalidate>
-        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
-        <div class="row">
-          <div class="field"><label for="parent">Parent / Guardian name <span class="req">*</span></label><input id="parent" name="Parent name" required autocomplete="name"></div>
-          <div class="field"><label for="player">Player name <span class="req">*</span></label><input id="player" name="Player name" required></div>
-        </div>
-        <div class="row">
-          <div class="field"><label for="email">Email <span class="req">*</span></label><input id="email" name="email" type="email" required autocomplete="email"></div>
-          <div class="field"><label for="phone">Phone <span class="req">*</span></label><input id="phone" name="Phone" type="tel" required autocomplete="tel"></div>
-        </div>
-        <div class="row">
-          <div class="field"><label for="age">Player age <span class="req">*</span></label>
-            <select id="age" name="Player age" required>
-              <option value="">Select…</option>
-              <option>7–8</option><option>9–10</option><option>11–12</option><option>13–14</option><option>High school (14–18)</option>
-            </select>
-          </div>
-          <div class="field"><label for="format">Lesson type <span class="req">*</span></label>
-            <select id="format" name="Lesson type" required>
-              <option value="">Select…</option>
-              <option>Private · 30 min ($40)</option>
-              <option>Private · 60 min ($65)</option>
-              <option>4-Lesson Pack · 30 min ($140)</option>
-              <option>4-Lesson Pack · 60 min ($240)</option>
-              <option>Small group · 60 min ($35/player)</option>
-            </select>
-          </div>
-        </div>
-        <fieldset>
-          <legend>What do you want to work on? <span class="req">*</span></legend>
-          <div class="chips" id="focus-chips">
-            <label class="chip"><input type="checkbox" name="Focus" value="Hitting"><span>Hitting</span></label>
-            <label class="chip"><input type="checkbox" name="Focus" value="Catching"><span>Catching</span></label>
-          </div>
-        </fieldset>
-        <div class="row">
-          <div class="field"><label for="date">Preferred date <span class="req">*</span></label><input id="date" name="Preferred date" type="date" required></div>
-          <div class="field"><label for="time">Preferred time <span class="req">*</span></label>
-            <select id="time" name="Preferred time" required disabled>
-              <option value="">Pick a date first</option>
-            </select>
-          </div>
-        </div>
-        <div class="field"><label for="notes">Anything I should know? (position, team, goals)</label><textarea id="notes" name="Notes"></textarea></div>
-        <div class="form-foot">
-          <p class="fine">No payment needed now. I'll confirm your time by text or email.</p>
-          <button class="btn btn-dark" type="submit">Request Lesson</button>
-        </div>
-        <div class="status" id="status" role="status" aria-live="polite"></div>
-      </form>
+      <div class="cal-card">
+        <div id="cal-inline"></div>
+        <p class="cal-fallback">Calendar not loading? <a href="https://cal.com/tjbaseball" target="_blank" rel="noopener">Open the booking page</a> or call/text <a href="tel:+18479608283">(847) 960-8283</a>.</p>
+      </div>
     </div>
   </section>
 </main>
@@ -381,10 +342,6 @@
 </footer>
 
 <script>
-  // Where booking requests are sent. FormSubmit forwards them to this inbox.
-  // The very first request triggers a one-time "activate this form" email to this address.
-  var BOOKING_EMAIL = "tjbaseballgroup@yahoo.com";
-
   document.getElementById("yr").textContent = new Date().getFullYear();
 
   // Mobile menu
@@ -396,68 +353,14 @@
   menu.querySelectorAll("a").forEach(function (a) {
     a.addEventListener("click", function () { menu.classList.remove("open"); menuBtn.setAttribute("aria-expanded", false); });
   });
+</script>
 
-  // No booking in the past
-  var dateInput = document.getElementById("date");
-  var t = new Date(); t.setMinutes(t.getMinutes() - t.getTimezoneOffset());
-  dateInput.min = t.toISOString().slice(0, 10);
-
-  // Coach availability: weekdays 4pm and later, weekend mornings
-  var WEEKDAY_TIMES = ["4:00 pm", "4:30 pm", "5:00 pm", "5:30 pm", "6:00 pm", "6:30 pm", "7:00 pm", "7:30 pm", "8:00 pm"];
-  var WEEKEND_TIMES = ["8:00 am", "8:30 am", "9:00 am", "9:30 am", "10:00 am", "10:30 am", "11:00 am"];
-  var timeSel = document.getElementById("time");
-  function fillTimes() {
-    timeSel.innerHTML = "";
-    if (!dateInput.value) {
-      timeSel.disabled = true;
-      timeSel.add(new Option("Pick a date first", ""));
-      return;
-    }
-    var day = new Date(dateInput.value + "T12:00:00").getDay();
-    var times = (day === 0 || day === 6) ? WEEKEND_TIMES : WEEKDAY_TIMES;
-    timeSel.disabled = false;
-    timeSel.add(new Option("Select a time…", ""));
-    times.forEach(function (tm) { timeSel.add(new Option(tm, tm)); });
-    timeSel.add(new Option("Any time that day", "Any time that day"));
-  }
-  dateInput.addEventListener("change", fillTimes);
-  form = document.getElementById("booking-form");
-  form.addEventListener("reset", function () { setTimeout(fillTimes, 0); });
-
-  var form = document.getElementById("booking-form"), statusEl = document.getElementById("status");
-  function show(kind, msg) { statusEl.className = "status " + kind; statusEl.textContent = msg; }
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    var focus = Array.prototype.map.call(form.querySelectorAll('input[name="Focus"]:checked'), function (c) { return c.value; });
-    if (!form.checkValidity() || focus.length === 0) {
-      show("err", focus.length === 0 && form.checkValidity() ? "Please pick Hitting, Catching, or both." : "Please fill in all required fields.");
-      var bad = form.querySelector(":invalid"); if (bad) bad.focus();
-      return;
-    }
-    var data = {};
-    new FormData(form).forEach(function (v, k) { if (k !== "Focus") data[k] = v; });
-    data["Focus"] = focus.join(" + ");
-    data._subject = "New lesson request: " + data["Player name"] + " (" + data["Focus"] + ")";
-    data._template = "table";
-    data._captcha = "false";
-
-    var btn = form.querySelector("button[type=submit]");
-    btn.disabled = true; btn.textContent = "Sending…";
-    fetch("https://formsubmit.co/ajax/" + BOOKING_EMAIL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "Accept": "application/json" },
-      body: JSON.stringify(data)
-    }).then(function (r) { return r.json().then(function (j) { if (!r.ok || String(j.success) === "false") throw new Error(j.message || "failed"); }); })
-      .then(function () {
-        form.reset();
-        show("ok", "Thanks! Your request was sent. Coach TJ will reach out soon to confirm your lesson.");
-      })
-      .catch(function () {
-        show("err", "Something went wrong sending your request. Please call or text (847) 960-8283 or email tjbaseballgroup@yahoo.com.");
-      })
-      .finally(function () { btn.disabled = false; btn.textContent = "Request Lesson"; });
-  });
+<!-- Cal.com booking calendar. Your Cal.com username goes in calLink below. -->
+<script>
+  (function (C, A, L) { var p = function (a, ar) { a.q.push(ar); }; var d = C.document; C.Cal = C.Cal || function () { var cal = C.Cal; var ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { var api = function () { p(api, arguments); }; var namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", "tj", { origin: "https://cal.com" });
+  Cal.ns.tj("inline", { elementOrSelector: "#cal-inline", calLink: "tjbaseball", config: { layout: "month_view", theme: "light" } });
+  Cal.ns.tj("ui", { theme: "light", hideEventTypeDetails: false, layout: "month_view", cssVarsPerTheme: { light: { "cal-brand": "#212327" } } });
 </script>
 </body>
 </html>
