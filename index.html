@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TJ Baseball | Hitting & Catching Lessons</title>
+<meta name="description" content="Private and small group hitting and catching lessons for youth and high school players with Coach TJ (Tyler Jacobsen) at TCT Sting in Algonquin, IL.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #212327;
+    --ink-2: #2c2f34;
+    --cream: #e4ded2;
+    --paper: #f2efe8;
+    --white: #ffffff;
+    --text: #2a2c30;
+    --muted: #5d6066;
+    --line: #d9d4c9;
+    --accent: #e4ded2;
+    --ok: #2f6b45;
+    --err: #9b2c2c;
+    --radius: 6px;
+    --max: 1120px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--white); color: var(--text);
+    font: 400 17px/1.6 Inter, system-ui, -apple-system, sans-serif;
+  }
+  h1, h2, h3, .eyebrow, .btn, nav a { font-family: Montserrat, Inter, sans-serif; }
+  h2 { font-size: clamp(22px, 3vw, 28px); letter-spacing: .08em; text-transform: uppercase; margin: 0 0 28px; font-weight: 700; color: var(--ink); }
+  a { color: inherit; }
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+  section { padding: 80px 0; }
+
+  /* Nav */
+  header.nav { position: sticky; top: 0; z-index: 20; background: var(--ink); color: var(--paper); border-bottom: 1px solid #000; }
+  header.nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+  .logo span { font-family: Montserrat, sans-serif; font-weight: 400; letter-spacing: .14em; font-size: 20px; }
+  nav { display: flex; gap: 28px; align-items: center; }
+  nav a { text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; opacity: .85; }
+  nav a:hover { opacity: 1; }
+  .menu-btn { display: none; background: none; border: 0; color: var(--paper); padding: 8px; cursor: pointer; }
+
+  .btn { display: inline-block; border: 0; cursor: pointer; text-decoration: none; text-transform: uppercase; letter-spacing: .1em; font-weight: 700; font-size: 14px; padding: 15px 26px; border-radius: var(--radius); transition: transform .15s, background .15s; }
+  .btn:active { transform: translateY(1px); }
+  .btn-light { background: var(--cream); color: var(--ink); }
+  .btn-light:hover { background: #fff; }
+  .btn-ghost { background: transparent; color: var(--paper); box-shadow: inset 0 0 0 2px rgba(242,239,232,.5); }
+  .btn-ghost:hover { box-shadow: inset 0 0 0 2px var(--paper); }
+  .btn-dark { background: var(--ink); color: var(--paper); }
+  .btn-dark:hover { background: #000; }
+  nav .btn { padding: 10px 18px; font-size: 12px; opacity: 1; }
+
+  /* Hero */
+  .hero { background: var(--ink); color: var(--paper); padding: 96px 0 140px; position: relative; clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%); }
+  .hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 14px; background: var(--cream); clip-path: polygon(0 100%, 100% 0, 100% 100%, 0 100%); }
+  .tag { display: inline-block; background: var(--cream); color: var(--ink); font-family: Montserrat, sans-serif; font-weight: 700; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; padding: 9px 16px; margin-bottom: 26px; }
+  .hero h1 { margin: 0; line-height: 1.02; font-size: clamp(40px, 7vw, 76px); font-weight: 800; letter-spacing: .01em; }
+  .hero h1 .thin { display: block; font-weight: 400; letter-spacing: .04em; }
+  .hero .coach { margin: 32px 0 6px; font-family: Montserrat, sans-serif; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; font-size: 18px; }
+  .hero .sub { margin: 0 0 36px; opacity: .8; font-size: 18px; }
+  .hero .ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  /* Work on */
+  .focus { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .focus > div { padding: 8px 40px 8px 0; }
+  .focus > div + div { border-left: 1px solid var(--line); padding-left: 40px; }
+  .focus h3 { display: flex; align-items: center; gap: 14px; font-size: 22px; letter-spacing: .1em; text-transform: uppercase; margin: 0 0 16px; color: var(--ink); }
+  .ic { width: 44px; height: 44px; border-radius: 50%; background: var(--ink); display: grid; place-items: center; flex: none; }
+  .focus ul { list-style: none; padding: 0 0 0 58px; margin: 0; }
+  .focus li { padding: 3px 0; }
+  .focus li:first-child { font-weight: 600; color: var(--ink); }
+
+  /* Lessons */
+  .lessons { background: var(--paper); }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .card { background: var(--white); border-top: 4px solid var(--ink); padding: 28px; border-radius: 0 0 var(--radius) var(--radius); }
+  .card h3 { margin: 0 0 6px; font-size: 18px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink); }
+  .card .meta { color: var(--muted); font-size: 15px; margin-bottom: 14px; }
+  .card .price { font-family: Montserrat, sans-serif; font-weight: 700; font-size: 22px; color: var(--ink); margin-bottom: 12px; }
+  .card p { margin: 0; font-size: 15px; color: var(--muted); }
+
+  .card .price small { font-size: 14px; font-weight: 600; color: var(--muted); }
+  .card .price-list { list-style: none; margin: 0 0 14px; padding: 0; }
+  .card .price-list li { display: flex; justify-content: space-between; align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--line); font-size: 15px; }
+  .card .price-list b { font-family: Montserrat, sans-serif; font-size: 20px; color: var(--ink); }
+  .card.featured { background: var(--ink); color: var(--paper); border-top-color: var(--cream); position: relative; }
+  .card.featured h3, .card.featured .price-list b { color: var(--paper); }
+  .card.featured .meta, .card.featured p { color: #c9c5bc; }
+  .card.featured .price-list li { border-color: #3a3d43; }
+  .badge { position: absolute; top: -14px; right: 20px; background: var(--cream); color: var(--ink); font: 700 11px Montserrat, sans-serif; letter-spacing: .12em; text-transform: uppercase; padding: 5px 10px; }
+  .hours { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 28px; }
+  .hours div { background: var(--white); padding: 20px 24px; border-left: 4px solid var(--ink); }
+  .hours strong { display: block; font-family: Montserrat, sans-serif; text-transform: uppercase; letter-spacing: .08em; font-size: 14px; color: var(--ink); }
+  .hours span { color: var(--muted); font-size: 16px; }
+  .note { margin: 20px 0 0; color: var(--muted); font-size: 15px; }
+
+  /* About */
+  .about-photo { margin: 0 0 40px; border-radius: 8px; overflow: hidden; aspect-ratio: 16 / 8; background: var(--ink); }
+  .about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 45% 0%; display: block; }
+  .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 56px; align-items: start; }
+  .about p { margin: 0 0 18px; font-size: 18px; }
+  .path { display: grid; gap: 22px; }
+  .path div { border-top: 3px solid var(--ink); padding-top: 10px; }
+  .path strong { display: block; font-family: Montserrat, sans-serif; letter-spacing: .08em; text-transform: uppercase; font-size: 14px; color: var(--ink); }
+  .path span { color: var(--muted); font-size: 15px; }
+  .awards { margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--line); }
+  .awards h3 { font-size: 16px; letter-spacing: .12em; text-transform: uppercase; margin: 0 0 18px; color: var(--ink); }
+  .awards ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 40px; }
+  .awards li { display: flex; align-items: center; gap: 12px; font-weight: 500; }
+  .check { width: 22px; height: 22px; border-radius: 50%; background: var(--ink); display: grid; place-items: center; flex: none; }
+
+  /* Booking */
+  .book { background: var(--ink); color: var(--paper); clip-path: polygon(0 40px, 100% 0, 100% 100%, 0 100%); padding-top: 120px; }
+  .book h2 { color: var(--paper); }
+  .book-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 56px; align-items: start; }
+  .book .lead { opacity: .85; margin: 0 0 28px; }
+  .contact { list-style: none; padding: 0; margin: 0 0 28px; display: grid; gap: 14px; }
+  .contact li { display: flex; gap: 12px; align-items: center; font-weight: 600; }
+  .contact a { text-decoration: none; }
+  .contact a:hover { text-decoration: underline; }
+  .steps { margin: 0; padding-left: 20px; opacity: .85; font-size: 15px; }
+  .steps li { margin-bottom: 6px; }
+
+  form { background: var(--white); color: var(--text); border-radius: 10px; padding: 32px; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .field { display: flex; flex-direction: column; margin-bottom: 16px; }
+  label, legend { font-size: 13px; font-weight: 600; letter-spacing: .03em; color: var(--ink); margin-bottom: 6px; }
+  .req { color: var(--err); }
+  input, select, textarea { font: inherit; font-size: 16px; padding: 11px 12px; border: 1px solid #c9c4b8; border-radius: var(--radius); background: #fff; color: var(--text); width: 100%; }
+  input:focus, select:focus, textarea:focus { outline: 2px solid var(--ink); outline-offset: 0; border-color: var(--ink); }
+  textarea { min-height: 90px; resize: vertical; }
+  fieldset { border: 0; padding: 0; margin: 0 0 16px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+  .chip input { position: absolute; opacity: 0; pointer-events: none; }
+  .chip span { display: inline-block; padding: 9px 14px; border: 1px solid #c9c4b8; border-radius: 999px; font-size: 14px; font-weight: 500; cursor: pointer; user-select: none; }
+  .chip input:checked + span { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .chip input:focus-visible + span { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .form-foot { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 8px; }
+  .fine { font-size: 13px; color: var(--muted); margin: 0; }
+  .status { margin-top: 16px; padding: 14px 16px; border-radius: var(--radius); font-size: 15px; display: none; }
+  .status.ok { display: block; background: #e7f2ea; color: var(--ok); }
+  .status.err { display: block; background: #f7e6e6; color: var(--err); }
+  .hp { position: absolute; left: -9999px; }
+
+  footer { background: #17181b; color: #a9a59c; font-size: 14px; padding: 28px 0; }
+  footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+  @media (max-width: 860px) {
+    section { padding: 60px 0; }
+    nav { display: none; position: absolute; top: 68px; left: 0; right: 0; background: var(--ink); flex-direction: column; align-items: stretch; gap: 0; padding: 8px 24px 20px; }
+    nav.open { display: flex; }
+    nav a { padding: 14px 0; border-bottom: 1px solid #3a3d43; }
+    nav .btn { margin-top: 14px; text-align: center; padding: 14px; }
+    .menu-btn { display: block; }
+    .hero { padding: 64px 0 110px; }
+    .focus, .cards, .about-grid, .book-grid { grid-template-columns: 1fr; }
+    .focus > div { padding: 0 0 28px; }
+    .focus > div + div { border-left: 0; border-top: 1px solid var(--line); padding: 28px 0 0; }
+    .about-grid { gap: 36px; }
+    .awards ul { grid-template-columns: 1fr; }
+    .hours { grid-template-columns: 1fr; }
+    .about-photo { aspect-ratio: 4 / 3; }
+    .book { padding-top: 90px; }
+  }
+  @media (max-width: 520px) {
+    .wrap { padding: 0 16px; }
+    .row { grid-template-columns: 1fr; gap: 0; }
+    form { padding: 22px 18px; }
+    .focus ul { padding-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="TJ Baseball home">
+      <svg width="34" height="40" viewBox="0 0 34 40" aria-hidden="true"><path d="M3 3h28v22L17 37 3 25z" fill="none" stroke="#f2efe8" stroke-width="3" stroke-linejoin="round"/><text x="17" y="21" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="800" font-size="11" fill="#f2efe8">TJ</text></svg>
+      <span>BASEBALL</span>
+    </a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav id="menu">
+      <a href="#training">Training</a>
+      <a href="#lessons">Lessons</a>
+      <a href="#about">About</a>
+      <a class="btn btn-light" href="#book">Book a Lesson</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="tag">Now booking at TCT Sting</div>
+      <h1>Hitting &amp; Catching <span class="thin">Lessons</span></h1>
+      <p class="coach">With Coach TJ · Tyler Jacobsen</p>
+      <p class="sub">Youth &amp; High School · Private &amp; Small Group</p>
+      <div class="ctas">
+        <a class="btn btn-light" href="#book">Book a Lesson</a>
+        <a class="btn btn-ghost" href="#about">Meet Coach TJ</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="training">
+    <div class="wrap">
+      <h2>What We Work On</h2>
+      <div class="focus">
+        <div>
+          <h3><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f2efe8" stroke-width="2" stroke-linecap="round"><path d="M5 19 17 7"/><path d="M15 5l4 4"/><circle cx="18" cy="18" r="2"/></svg></span>Hitting</h3>
+          <ul>
+            <li>Hitting mechanics &amp; power</li>
+            <li>A simple, repeatable swing</li>
+            <li>More power and consistency</li>
+          </ul>
+        </div>
+        <div>
+          <h3><span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#f2efe8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 11a6 6 0 0 1 12 0v3H6z"/><path d="M9 14v4M15 14v4M7 18h10"/><path d="M12 8v6"/></svg></span>Catching</h3>
+          <ul>
+            <li>Catching skills &amp; game IQ</li>
+            <li>Quick decisions</li>
+            <li>Leadership behind the plate</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="lessons" class="lessons">
+    <div class="wrap">
+      <h2>Lessons &amp; Rates</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Private Lesson</h3>
+          <div class="meta">1 player · Hitting, Catching, or both</div>
+          <ul class="price-list">
+            <li><span>30 minutes</span><b>$40</b></li>
+            <li><span>60 minutes</span><b>$65</b></li>
+          </ul>
+          <p>One-on-one work built around your player's swing or game behind the plate. The most focused way to improve fast.</p>
+        </div>
+        <div class="card featured">
+          <span class="badge">Best value</span>
+          <h3>4-Lesson Pack</h3>
+          <div class="meta">1 player · Use within 8 weeks</div>
+          <ul class="price-list">
+            <li><span>4 × 30 minutes</span><b>$140</b></li>
+            <li><span>4 × 60 minutes</span><b>$240</b></li>
+          </ul>
+          <p>Real progress comes from repetition. Lock in a month of private lessons and save $20 off single-lesson pricing.</p>
+        </div>
+        <div class="card">
+          <h3>Small Group</h3>
+          <div class="meta">2–4 players · 60 minutes</div>
+          <ul class="price-list">
+            <li><span>Per player</span><b>$35</b></li>
+          </ul>
+          <p>Train with teammates or friends. Great for building skills together while keeping plenty of individual attention.</p>
+        </div>
+      </div>
+      <div class="hours">
+        <div><strong>Monday – Friday</strong><span>4:00 pm and later</span></div>
+        <div><strong>Saturday &amp; Sunday</strong><span>Mornings, 8:00 am – 12:00 pm</span></div>
+      </div>
+      <p class="note">All lessons at TCT Sting, 201 Berg St, Algonquin. Payment is collected at the lesson. Nothing is charged online.</p>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="wrap">
+      <h2>About Coach TJ</h2>
+      <figure class="about-photo"><img src="images/coach-tyler.jpg" alt="Coach TJ (Tyler Jacobsen) at bat during a college game" width="1400" height="933" loading="lazy"></figure>
+      <div class="about-grid">
+        <div>
+          <p>I played high school baseball at Jacobs High School, where I was named All-Fox Valley Conference as a senior. After two seasons at Kishwaukee College, I transferred to Mississippi Christian University (D2), where I played two more seasons and earned my degree in accounting.</p>
+          <p>Having competed at every level, I know what it takes to succeed. My lessons focus on <strong>fundamentals, confidence, and the right mindset</strong>, so athletes can reach their full potential on and off the field.</p>
+        </div>
+        <div class="path">
+          <div><strong>Jacobs High School</strong><span>High school baseball</span></div>
+          <div><strong>Kishwaukee College</strong><span>2 seasons · college baseball</span></div>
+          <div><strong>Mississippi Christian University (D2)</strong><span>2 seasons · accounting degree</span></div>
+        </div>
+      </div>
+      <div class="awards">
+        <h3>Awards &amp; Honors</h3>
+        <ul>
+          <li><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span>All-Fox Valley Conference</li>
+          <li><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span>Arrowhead All Conference</li>
+          <li><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span>2x All-Region 4 Selection</li>
+          <li><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></span>All-South Defensive Team</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="book" class="book">
+    <div class="wrap book-grid">
+      <div>
+        <h2>Book Your Spot Today</h2>
+        <p class="lead">Lessons are held at the TCT Sting facility. Send a request and I'll get back to you to confirm a time.</p>
+        <p class="lead"><strong>Available:</strong> Mon–Fri after 4 pm · Sat &amp; Sun mornings</p>
+        <ul class="contact">
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+18479608283">(847) 960-8283</a></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg><a href="mailto:tjbaseballgroup@yahoo.com">tjbaseballgroup@yahoo.com</a></li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg><a href="https://maps.google.com/?q=201+Berg+St,+Algonquin,+IL+60102" target="_blank" rel="noopener">201 Berg St, Algonquin, IL 60102</a></li>
+        </ul>
+        <ol class="steps">
+          <li>Fill out the request form.</li>
+          <li>Coach TJ reaches out to confirm the day and time.</li>
+          <li>Show up at TCT Sting ready to work.</li>
+        </ol>
+      </div>
+
+      <form id="booking-form" novalidate>
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
+        <div class="row">
+          <div class="field"><label for="parent">Parent / Guardian name <span class="req">*</span></label><input id="parent" name="Parent name" required autocomplete="name"></div>
+          <div class="field"><label for="player">Player name <span class="req">*</span></label><input id="player" name="Player name" required></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="email">Email <span class="req">*</span></label><input id="email" name="email" type="email" required autocomplete="email"></div>
+          <div class="field"><label for="phone">Phone <span class="req">*</span></label><input id="phone" name="Phone" type="tel" required autocomplete="tel"></div>
+        </div>
+        <div class="row">
+          <div class="field"><label for="age">Player age <span class="req">*</span></label>
+            <select id="age" name="Player age" required>
+              <option value="">Select…</option>
+              <option>7–8</option><option>9–10</option><option>11–12</option><option>13–14</option><option>High school (14–18)</option>
+            </select>
+          </div>
+          <div class="field"><label for="format">Lesson type <span class="req">*</span></label>
+            <select id="format" name="Lesson type" required>
+              <option value="">Select…</option>
+              <option>Private · 30 min ($40)</option>
+              <option>Private · 60 min ($65)</option>
+              <option>4-Lesson Pack · 30 min ($140)</option>
+              <option>4-Lesson Pack · 60 min ($240)</option>
+              <option>Small group · 60 min ($35/player)</option>
+            </select>
+          </div>
+        </div>
+        <fieldset>
+          <legend>What do you want to work on? <span class="req">*</span></legend>
+          <div class="chips" id="focus-chips">
+            <label class="chip"><input type="checkbox" name="Focus" value="Hitting"><span>Hitting</span></label>
+            <label class="chip"><input type="checkbox" name="Focus" value="Catching"><span>Catching</span></label>
+          </div>
+        </fieldset>
+        <div class="row">
+          <div class="field"><label for="date">Preferred date <span class="req">*</span></label><input id="date" name="Preferred date" type="date" required></div>
+          <div class="field"><label for="time">Preferred time <span class="req">*</span></label>
+            <select id="time" name="Preferred time" required disabled>
+              <option value="">Pick a date first</option>
+            </select>
+          </div>
+        </div>
+        <div class="field"><label for="notes">Anything I should know? (position, team, goals)</label><textarea id="notes" name="Notes"></textarea></div>
+        <div class="form-foot">
+          <p class="fine">No payment needed now. I'll confirm your time by text or email.</p>
+          <button class="btn btn-dark" type="submit">Request Lesson</button>
+        </div>
+        <div class="status" id="status" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> TJ Baseball · Coach TJ (Tyler Jacobsen)</span>
+    <span>TCT Sting · Algonquin, IL</span>
+  </div>
+</footer>
+
+<script>
+  // Where booking requests are sent. FormSubmit forwards them to this inbox.
+  // The very first request triggers a one-time "activate this form" email to this address.
+  var BOOKING_EMAIL = "tjbaseballgroup@yahoo.com";
+
+  document.getElementById("yr").textContent = new Date().getFullYear();
+
+  // Mobile menu
+  var menuBtn = document.querySelector(".menu-btn"), menu = document.getElementById("menu");
+  menuBtn.addEventListener("click", function () {
+    var open = menu.classList.toggle("open");
+    menuBtn.setAttribute("aria-expanded", open);
+  });
+  menu.querySelectorAll("a").forEach(function (a) {
+    a.addEventListener("click", function () { menu.classList.remove("open"); menuBtn.setAttribute("aria-expanded", false); });
+  });
+
+  // No booking in the past
+  var dateInput = document.getElementById("date");
+  var t = new Date(); t.setMinutes(t.getMinutes() - t.getTimezoneOffset());
+  dateInput.min = t.toISOString().slice(0, 10);
+
+  // Coach availability: weekdays 4pm and later, weekend mornings
+  var WEEKDAY_TIMES = ["4:00 pm", "4:30 pm", "5:00 pm", "5:30 pm", "6:00 pm", "6:30 pm", "7:00 pm", "7:30 pm", "8:00 pm"];
+  var WEEKEND_TIMES = ["8:00 am", "8:30 am", "9:00 am", "9:30 am", "10:00 am", "10:30 am", "11:00 am"];
+  var timeSel = document.getElementById("time");
+  function fillTimes() {
+    timeSel.innerHTML = "";
+    if (!dateInput.value) {
+      timeSel.disabled = true;
+      timeSel.add(new Option("Pick a date first", ""));
+      return;
+    }
+    var day = new Date(dateInput.value + "T12:00:00").getDay();
+    var times = (day === 0 || day === 6) ? WEEKEND_TIMES : WEEKDAY_TIMES;
+    timeSel.disabled = false;
+    timeSel.add(new Option("Select a time…", ""));
+    times.forEach(function (tm) { timeSel.add(new Option(tm, tm)); });
+    timeSel.add(new Option("Any time that day", "Any time that day"));
+  }
+  dateInput.addEventListener("change", fillTimes);
+  form = document.getElementById("booking-form");
+  form.addEventListener("reset", function () { setTimeout(fillTimes, 0); });
+
+  var form = document.getElementById("booking-form"), statusEl = document.getElementById("status");
+  function show(kind, msg) { statusEl.className = "status " + kind; statusEl.textContent = msg; }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var focus = Array.prototype.map.call(form.querySelectorAll('input[name="Focus"]:checked'), function (c) { return c.value; });
+    if (!form.checkValidity() || focus.length === 0) {
+      show("err", focus.length === 0 && form.checkValidity() ? "Please pick Hitting, Catching, or both." : "Please fill in all required fields.");
+      var bad = form.querySelector(":invalid"); if (bad) bad.focus();
+      return;
+    }
+    var data = {};
+    new FormData(form).forEach(function (v, k) { if (k !== "Focus") data[k] = v; });
+    data["Focus"] = focus.join(" + ");
+    data._subject = "New lesson request: " + data["Player name"] + " (" + data["Focus"] + ")";
+    data._template = "table";
+    data._captcha = "false";
+
+    var btn = form.querySelector("button[type=submit]");
+    btn.disabled = true; btn.textContent = "Sending…";
+    fetch("https://formsubmit.co/ajax/" + BOOKING_EMAIL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(data)
+    }).then(function (r) { return r.json().then(function (j) { if (!r.ok || String(j.success) === "false") throw new Error(j.message || "failed"); }); })
+      .then(function () {
+        form.reset();
+        show("ok", "Thanks! Your request was sent. Coach TJ will reach out soon to confirm your lesson.");
+      })
+      .catch(function () {
+        show("err", "Something went wrong sending your request. Please call or text (847) 960-8283 or email tjbaseballgroup@yahoo.com.");
+      })
+      .finally(function () { btn.disabled = false; btn.textContent = "Request Lesson"; });
+  });
+</script>
+</body>
+</html>
