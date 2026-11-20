@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin | TJ Baseball</title>
+<meta name="description" content="Private admin page.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="TJ Baseball home">
+      <svg width="34" height="40" viewBox="0 0 34 40" aria-hidden="true"><path d="M3 3h28v22L17 37 3 25z" fill="none" stroke="#f2efe8" stroke-width="3" stroke-linejoin="round"/><text x="17" y="21" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="800" font-size="11" fill="#f2efe8">TJ</text></svg>
+      <span>BASEBALL</span>
+    </a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav id="menu">
+      <a href="/lessons/">Lessons</a>
+      <a href="/remote/">Remote Coaching</a>
+      <a href="/about/">About</a>
+      <a class="btn btn-light" href="/book/">Book a Lesson</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="tag">Private · Coach TJ only</div>
+      <h1>Admin <span class="thin">Control Center</span></h1>
+      <p>Everything you need to run TJ Baseball, in one place. Each button opens the service where you're already signed in.</p>
+    </div>
+  </section>
+
+  <section class="admin">
+    <div class="wrap">
+      <h2>Bookings &amp; Schedule</h2>
+      <div class="a-grid">
+        <a class="a-tile" href="https://app.cal.com/bookings/upcoming" target="_blank" rel="noopener"><strong>Upcoming Bookings</strong><span>Who's coming, when, and their answers</span></a>
+        <a class="a-tile" href="https://app.cal.com/availability" target="_blank" rel="noopener"><strong>Availability</strong><span>Change your hours or block off days</span></a>
+        <a class="a-tile" href="https://app.cal.com/event-types" target="_blank" rel="noopener"><strong>Lesson Types</strong><span>Edit lessons, prices, and durations</span></a>
+        <a class="a-tile" href="https://cal.com/tjbaseball" target="_blank" rel="noopener"><strong>Your Booking Page</strong><span>See what parents see</span></a>
+      </div>
+
+      <h2>Payments &amp; Clients</h2>
+      <div class="a-grid">
+        <a class="a-tile" href="https://dashboard.stripe.com/payments" target="_blank" rel="noopener"><strong>Payments</strong><span>Every payment that's come in</span></a>
+        <a class="a-tile" href="https://dashboard.stripe.com/subscriptions" target="_blank" rel="noopener"><strong>Subscriptions</strong><span>Starter, Pro, and Elite members</span></a>
+        <a class="a-tile" href="https://dashboard.stripe.com/customers" target="_blank" rel="noopener"><strong>Customers</strong><span>Parent names, emails, and phone numbers</span></a>
+        <a class="a-tile" href="https://dashboard.stripe.com/payment-links" target="_blank" rel="noopener"><strong>Payment Links</strong><span>Edit products and checkout messages</span></a>
+        <a class="a-tile" href="https://dashboard.stripe.com/coupons" target="_blank" rel="noopener"><strong>Coupons &amp; Codes</strong><span>NEWPLAYER and future promos</span></a>
+        <a class="a-tile" href="https://dashboard.stripe.com/payouts" target="_blank" rel="noopener"><strong>Payouts</strong><span>Money sent to your bank</span></a>
+      </div>
+
+      <h2>Remote Coaching Videos</h2>
+      <div class="a-grid">
+        <a class="a-tile" href="https://www.dropbox.com/home" target="_blank" rel="noopener"><strong>Uploaded Videos</strong><span>Open your Dropbox to find new swings</span></a>
+        <a class="a-tile" href="https://www.dropbox.com/requests" target="_blank" rel="noopener"><strong>Upload Request</strong><span>Manage the parent upload link</span></a>
+        <a class="a-tile" href="https://www.dropbox.com/request/i9k9hhoxixhczxeht5ap" target="_blank" rel="noopener"><strong>Test the Upload Page</strong><span>What parents see when they upload</span></a>
+      </div>
+
+      <div class="a-work">
+        <h3>Breakdown Checklist</h3>
+        <ol>
+          <li>Check <b>Stripe → Payments</b> for a new purchase or plan.</li>
+          <li>Find their video in <b>Dropbox</b>.</li>
+          <li>Record your voice-over breakdown (OnForm or screen recording).</li>
+          <li>Send the breakdown and 2–3 drills by text or email.</li>
+          <li>Delete or move the video in Dropbox to free up space.</li>
+        </ol>
+      </div>
+
+      <h2>Website</h2>
+      <div class="a-grid">
+        <a class="a-tile" href="https://dashboard.render.com" target="_blank" rel="noopener"><strong>Render</strong><span>Deploy updates (Manual Deploy → Deploy latest commit)</span></a>
+        <a class="a-tile" href="https://github.com" target="_blank" rel="noopener"><strong>GitHub</strong><span>Upload new website files</span></a>
+        <a class="a-tile" href="https://tjbaseball.onrender.com" target="_blank" rel="noopener"><strong>View Live Site</strong><span>Check how it looks</span></a>
+      </div>
+
+      <h2>Copy &amp; Paste Messages</h2>
+      <div class="copy-grid">
+        <div class="copy-box"><div class="copy-head"><strong>Upload link</strong><button class="copy-btn" type="button">Copy</button></div><textarea readonly rows="3">https://www.dropbox.com/request/i9k9hhoxixhczxeht5ap</textarea></div>
+        <div class="copy-box"><div class="copy-head"><strong>After a parent pays (Stripe confirmation)</strong><button class="copy-btn" type="button">Copy</button></div><textarea readonly rows="3">Thanks! Upload your video here: https://www.dropbox.com/request/i9k9hhoxixhczxeht5ap . Include the player's name, age, and what you want to work on. Your breakdown will be back within 2–3 days.</textarea></div>
+        <div class="copy-box"><div class="copy-head"><strong>Promo for Instagram / texts</strong><button class="copy-btn" type="button">Copy</button></div><textarea readonly rows="3">Remote hitting & catching coaching is open! Send your swing, get a full video breakdown + drills from Coach TJ. New players get $15 off with code NEWPLAYER. Plans from $49/mo: tjbaseball.onrender.com/remote/</textarea></div>
+        <div class="copy-box"><div class="copy-head"><strong>Reply to a new booking</strong><button class="copy-btn" type="button">Copy</button></div><textarea readonly rows="3">Hi! This is Coach TJ. You're all set for your lesson at TCT Sting (201 Berg St, Algonquin). Bring a bat, helmet, and glove/catcher's gear. Text me at (847) 960-8283 with any questions. See you there!</textarea></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="/" aria-label="TJ Baseball home"><svg width="34" height="40" viewBox="0 0 34 40" aria-hidden="true"><path d="M3 3h28v22L17 37 3 25z" fill="none" stroke="#f2efe8" stroke-width="3" stroke-linejoin="round"/><text x="17" y="21" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="800" font-size="11" fill="#f2efe8">TJ</text></svg><span>BASEBALL</span></a>
+        <p style="margin:0">Hitting &amp; catching lessons with Coach TJ (Tyler Jacobsen). In person at TCT Sting in Algonquin, IL, and remote anywhere.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/lessons/">In-Person Lessons</a></li>
+          <li><a href="/remote/">Remote Coaching</a></li>
+          <li><a href="/about/">About Coach TJ</a></li>
+          <li><a href="/book/">Book a Lesson</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+18479608283">(847) 960-8283</a></li>
+          <li><a href="mailto:tjbaseballgroup@yahoo.com">tjbaseballgroup@yahoo.com</a></li>
+          <li><a href="https://maps.google.com/?q=201+Berg+St,+Algonquin,+IL+60102" target="_blank" rel="noopener">TCT Sting · 201 Berg St, Algonquin, IL</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy"><span>© <span id="yr"></span> TJ Baseball Group LLC</span><span>Coach TJ · Tyler Jacobsen</span></div>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+<script>
+document.querySelectorAll(".copy-btn").forEach(function (b) {
+  b.addEventListener("click", function () {
+    var t = b.closest(".copy-box").querySelector("textarea");
+    var done = function () { b.textContent = "Copied!"; setTimeout(function () { b.textContent = "Copy"; }, 1500); };
+    if (navigator.clipboard) navigator.clipboard.writeText(t.value).then(done, function () { t.select(); document.execCommand("copy"); done(); });
+    else { t.select(); document.execCommand("copy"); done(); }
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book a Lesson | TJ Baseball</title>
+<meta name="description" content="See Coach TJ's open times and book a hitting or catching lesson or a live virtual session.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="TJ Baseball home">
+      <svg width="34" height="40" viewBox="0 0 34 40" aria-hidden="true"><path d="M3 3h28v22L17 37 3 25z" fill="none" stroke="#f2efe8" stroke-width="3" stroke-linejoin="round"/><text x="17" y="21" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="800" font-size="11" fill="#f2efe8">TJ</text></svg>
+      <span>BASEBALL</span>
+    </a>
+    <button class="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="menu">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav id="menu">
+      <a href="/lessons/">Lessons</a>
+      <a href="/remote/">Remote Coaching</a>
+      <a href="/about/">About</a>
+      <a class="btn btn-light active" href="/book/">Book a Lesson</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="page-hero">
+    <div class="wrap">
+      <div class="tag">Mon–Fri after 4 pm · Sat &amp; Sun mornings</div>
+      <h1>Book a <span class="thin">Lesson</span></h1>
+      <p>Pick a lesson, then choose any open time. You'll get a confirmation email right away.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="info-row">
+        <div class="info-box"><strong>Call or text</strong><a href="tel:+18479608283">(847) 960-8283</a></div>
+        <div class="info-box"><strong>Email</strong><a href="mailto:tjbaseballgroup@yahoo.com">tjbaseballgroup@yahoo.com</a></div>
+        <div class="info-box"><strong>Location</strong><a href="https://maps.google.com/?q=201+Berg+St,+Algonquin,+IL+60102" target="_blank" rel="noopener">TCT Sting, 201 Berg St, Algonquin</a></div>
+      </div>
+      <p class="book-note">In-person lessons are paid at the lesson. Looking for video breakdowns instead? <a href="/remote/">See remote coaching.</a></p>
+      <div class="cal-card">
+        <div id="cal-inline"></div>
+        <p class="cal-fallback">Calendar not loading? <a href="https://cal.com/tjbaseball" target="_blank" rel="noopener">Open the booking page</a> or call/text <a href="tel:+18479608283">(847) 960-8283</a>.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="/" aria-label="TJ Baseball home"><svg width="34" height="40" viewBox="0 0 34 40" aria-hidden="true"><path d="M3 3h28v22L17 37 3 25z" fill="none" stroke="#f2efe8" stroke-width="3" stroke-linejoin="round"/><text x="17" y="21" text-anchor="middle" font-family="Montserrat, sans-serif" font-weight="800" font-size="11" fill="#f2efe8">TJ</text></svg><span>BASEBALL</span></a>
+        <p style="margin:0">Hitting &amp; catching lessons with Coach TJ (Tyler Jacobsen). In person at TCT Sting in Algonquin, IL, and remote anywhere.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="/lessons/">In-Person Lessons</a></li>
+          <li><a href="/remote/">Remote Coaching</a></li>
+          <li><a href="/about/">About Coach TJ</a></li>
+          <li><a href="/book/">Book a Lesson</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+18479608283">(847) 960-8283</a></li>
+          <li><a href="mailto:tjbaseballgroup@yahoo.com">tjbaseballgroup@yahoo.com</a></li>
+          <li><a href="https://maps.google.com/?q=201+Berg+St,+Algonquin,+IL+60102" target="_blank" rel="noopener">TCT Sting · 201 Berg St, Algonquin, IL</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy"><span>© <span id="yr"></span> TJ Baseball Group LLC</span><span>Coach TJ · Tyler Jacobsen</span></div>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+<!-- Cal.com booking calendar. Your Cal.com username goes in calLink below. -->
+<script>
+  (function (C, A, L) { var p = function (a, ar) { a.q.push(ar); }; var d = C.document; C.Cal = C.Cal || function () { var cal = C.Cal; var ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { var api = function () { p(api, arguments); }; var namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", "tj", { origin: "https://cal.com" });
+  Cal.ns.tj("inline", { elementOrSelector: "#cal-inline", calLink: "tjbaseball", config: { layout: "month_view", theme: "light" } });
+  Cal.ns.tj("ui", { theme: "light", hideEventTypeDetails: false, layout: "month_view", cssVarsPerTheme: { light: { "cal-brand": "#212327" } } });
+</script>
+</body>
+</html>
