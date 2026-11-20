@@ -100,6 +100,60 @@
   .hours span { color: var(--muted); font-size: 16px; }
   .note { margin: 20px 0 0; color: var(--muted); font-size: 15px; }
 
+
+  /* Remote */
+  .eyebrow-tag { display: inline-block; background: var(--ink); color: var(--paper); font: 700 11px Montserrat, sans-serif; letter-spacing: .14em; text-transform: uppercase; padding: 5px 10px; margin-bottom: 14px; }
+  .remote .intro { font-size: 18px; max-width: 760px; margin: -8px 0 40px; }
+  .how { list-style: none; padding: 0; margin: 0 0 48px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .how li { border-top: 3px solid var(--ink); padding-top: 14px; display: flex; flex-direction: column; gap: 4px; }
+  .how .num { font: 800 28px Montserrat, sans-serif; color: var(--ink); line-height: 1; margin-bottom: 4px; }
+  .how strong { font-family: Montserrat, sans-serif; text-transform: uppercase; letter-spacing: .08em; font-size: 15px; color: var(--ink); }
+  .how span:last-child { color: var(--muted); font-size: 15px; }
+  .remote .card { border: 1px solid var(--line); border-top: 4px solid var(--ink); }
+  .remote .card.featured { border-color: var(--ink); }
+  .film { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
+  .film > div { background: var(--paper); padding: 28px; border-radius: 8px; min-width: 0; }
+  .film h3 { font-size: 16px; letter-spacing: .12em; text-transform: uppercase; margin: 0 0 14px; color: var(--ink); }
+  .tips { margin: 0; padding-left: 18px; }
+  .tips li { margin-bottom: 8px; font-size: 15px; }
+  .film .send { background: var(--ink); color: var(--paper); }
+  .film .send h3 { color: var(--paper); }
+  .film .send p { opacity: .85; font-size: 15px; margin: 0 0 18px; }
+  .send-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
+  .send .btn-dark { background: var(--cream); color: var(--ink); }
+  .send .btn-dark:hover { background: #fff; }
+  .btn-outline { background: transparent; color: var(--paper); box-shadow: inset 0 0 0 2px rgba(242,239,232,.5); }
+  .btn-outline:hover { box-shadow: inset 0 0 0 2px var(--paper); }
+  .btn-upload { display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; font-size: 15px; padding: 18px 26px; margin-bottom: 18px; }
+  .film .send .or { font-size: 13px; opacity: .7; margin: 0 0 10px; }
+  .film .send .small { font-size: 13px; opacity: .7; margin: 0; }
+  .film .send a:not(.btn) { color: var(--paper); }
+
+  .promo { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; background: var(--cream); padding: 16px 22px; border-radius: 8px; margin: 0 0 36px; }
+  .promo p { margin: 0; color: var(--ink); }
+  .promo-tag { background: var(--ink); color: var(--paper); font: 700 11px Montserrat, sans-serif; letter-spacing: .14em; text-transform: uppercase; padding: 6px 10px; }
+  .promo .code { font-family: Montserrat, sans-serif; letter-spacing: .08em; background: #fff; padding: 2px 8px; border-radius: 4px; }
+  .tier { display: flex; flex-direction: column; }
+  .tier-price { margin: 4px 0 16px; color: var(--ink); }
+  .tier-price b { font: 800 40px Montserrat, sans-serif; }
+  .tier-price span { color: var(--muted); font-size: 15px; margin-left: 4px; }
+  .card.featured .tier-price, .card.featured .tier-price b { color: var(--paper); }
+  .card.featured .tier-price span { color: #c9c5bc; }
+  .feat { list-style: none; margin: 0 0 24px; padding: 0; flex: 1; }
+  .feat li { position: relative; padding: 7px 0 7px 26px; font-size: 15px; border-bottom: 1px solid var(--line); }
+  .card.featured .feat li { border-color: #3a3d43; color: var(--paper); }
+  .feat li::before { content: ""; position: absolute; left: 2px; top: 13px; width: 12px; height: 7px; border-left: 2.5px solid currentColor; border-bottom: 2.5px solid currentColor; transform: rotate(-45deg); }
+  .tier-btn { text-align: center; }
+  .tier-note { font-size: 14px; color: var(--muted); margin: 14px 0 32px; }
+  .one-time { display: grid; gap: 12px; }
+  .ot { display: flex; justify-content: space-between; align-items: center; gap: 20px; border: 1px solid var(--line); border-radius: 8px; padding: 18px 22px; }
+  .ot strong { display: block; font-family: Montserrat, sans-serif; text-transform: uppercase; letter-spacing: .06em; font-size: 15px; color: var(--ink); }
+  .ot span { color: var(--muted); font-size: 15px; }
+  .ot-right { display: flex; align-items: center; gap: 18px; flex: none; }
+  .ot-right b { font: 700 22px Montserrat, sans-serif; color: var(--ink); }
+  .ot-right .btn { padding: 12px 20px; font-size: 13px; }
+  .about { background: var(--paper); }
+
   /* About */
   .about-photo { margin: 0 0 40px; border-radius: 8px; overflow: hidden; aspect-ratio: 16 / 8; background: var(--ink); }
   .about-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 45% 0%; display: block; }
@@ -172,6 +226,10 @@
     .about-grid { gap: 36px; }
     .awards ul { grid-template-columns: 1fr; }
     .hours { grid-template-columns: 1fr; }
+    .how { grid-template-columns: 1fr 1fr; }
+    .film { grid-template-columns: 1fr; }
+    .ot { flex-direction: column; align-items: flex-start; }
+    .ot-right { width: 100%; justify-content: space-between; }
     .about-photo { aspect-ratio: 4 / 3; }
     .book { padding-top: 90px; }
   }
@@ -197,6 +255,7 @@
     <nav id="menu">
       <a href="#training">Training</a>
       <a href="#lessons">Lessons</a>
+      <a href="#remote">Remote</a>
       <a href="#about">About</a>
       <a class="btn btn-light" href="#book">Book a Lesson</a>
     </nav>
@@ -206,13 +265,13 @@
 <main id="top">
   <section class="hero">
     <div class="wrap">
-      <div class="tag">Now booking at TCT Sting</div>
+      <div class="tag">Now booking at TCT Sting · Remote coaching available</div>
       <h1>Hitting &amp; Catching <span class="thin">Lessons</span></h1>
       <p class="coach">With Coach TJ · Tyler Jacobsen</p>
       <p class="sub">Youth &amp; High School · Private &amp; Small Group</p>
       <div class="ctas">
         <a class="btn btn-light" href="#book">Book a Lesson</a>
-        <a class="btn btn-ghost" href="#about">Meet Coach TJ</a>
+        <a class="btn btn-ghost" href="#remote">Remote Coaching</a>
       </div>
     </div>
   </section>
@@ -281,6 +340,101 @@
     </div>
   </section>
 
+  <section id="remote" class="remote">
+    <div class="wrap">
+      <div class="eyebrow-tag">New</div>
+      <h2>Remote Hitting &amp; Catching</h2>
+      <p class="intro">Can't make it to Algonquin? Send me video of your swing or your work behind the plate. I'll break it down on video, show you exactly what to fix, and give you the drills to fix it, wherever you play.</p>
+
+      <ol class="how">
+        <li><span class="num">1</span><strong>Film</strong><span>Record a few swings or catching reps using the filming guide below.</span></li>
+        <li><span class="num">2</span><strong>Upload</strong><span>Upload your video with one tap (no account needed), with the player's name, age, and what you want to work on.</span></li>
+        <li><span class="num">3</span><strong>Get your breakdown</strong><span>I send back a voice-over video breakdown with markups, usually within 2–3 days.</span></li>
+        <li><span class="num">4</span><strong>Do the drills</strong><span>You get 2–3 drills to work on. Send a follow-up video to track progress.</span></li>
+      </ol>
+
+      <div class="promo">
+        <span class="promo-tag">New Player Offer</span>
+        <p><b>$15 off</b> your first breakdown or your first month of any program. Use code <b class="code">NEWPLAYER</b> at checkout.</p>
+      </div>
+
+      <div class="cards tiers">
+        <div class="card tier">
+          <h3>Starter</h3>
+          <div class="meta">Perfect first step</div>
+          <div class="tier-price"><b>$49</b><span>/month</span></div>
+          <ul class="feat">
+            <li>1 full video breakdown a month</li>
+            <li>1 follow-up video review</li>
+            <li>4-week drill plan</li>
+          </ul>
+          <a class="btn btn-dark tier-btn" data-plan="starter" href="#send">Get Started</a>
+        </div>
+        <div class="card tier featured">
+          <span class="badge">Most popular</span>
+          <h3>Pro</h3>
+          <div class="meta">Steady, noticeable progress</div>
+          <div class="tier-price"><b>$89</b><span>/month</span></div>
+          <ul class="feat">
+            <li>2 full video breakdowns a month</li>
+            <li>Weekly drill plan</li>
+            <li>Text check-ins with Coach TJ</li>
+          </ul>
+          <a class="btn btn-light tier-btn" data-plan="pro" href="#send">Get Started</a>
+        </div>
+        <div class="card tier">
+          <h3>Elite</h3>
+          <div class="meta">For serious players</div>
+          <div class="tier-price"><b>$159</b><span>/month</span></div>
+          <ul class="feat">
+            <li>Weekly video breakdowns (4 a month)</li>
+            <li>Weekly drill plan</li>
+            <li>Text check-ins with Coach TJ</li>
+            <li>1 live 30-min virtual session a month</li>
+            <li>Priority turnaround (within 48 hours)</li>
+          </ul>
+          <a class="btn btn-dark tier-btn" data-plan="elite" href="#send">Get Started</a>
+        </div>
+      </div>
+      <p class="tier-note">Monthly plans are billed automatically. Cancel anytime.</p>
+
+      <div class="one-time">
+        <div class="ot">
+          <div><strong>Single Video Breakdown</strong><span>One breakdown + drill plan, no commitment. Hitting or catching.</span></div>
+          <div class="ot-right"><b>$35</b><a class="btn btn-dark" data-plan="single" href="#send">Buy Now</a></div>
+        </div>
+        <div class="ot">
+          <div><strong>Live Virtual Session</strong><span>30-minute one-on-one video call with real-time feedback.</span></div>
+          <div class="ot-right"><b>$40</b><a class="btn btn-dark" href="#book">Book a Time</a></div>
+        </div>
+      </div>
+
+      <div class="film">
+        <div>
+          <h3>How to Film</h3>
+          <ul class="tips">
+            <li><b>Two angles:</b> one from the side facing the player's chest, one from straight behind.</li>
+            <li><b>Phone at hip height,</b> about 10–15 feet away, held sideways and steady (a tripod or fence works).</li>
+            <li><b>Use slow-motion</b> if your phone has it.</li>
+            <li><b>Whole body in frame,</b> from head to feet, for the full rep.</li>
+            <li><b>3–5 reps per angle</b> (tee, front toss, or live), or 3–5 catching reps: receiving, blocking, throws.</li>
+          </ul>
+        </div>
+        <div class="send" id="send">
+          <h3>Ready? Upload Your Video</h3>
+          <p>Upload straight from your phone, no account needed. In the file name or note, include the player's name, age, hitting or catching, and which package you want. I'll text back to confirm and send payment details before I start your breakdown.</p>
+          <a class="btn btn-dark btn-upload" href="https://www.dropbox.com/request/i9k9hhoxixhczxeht5ap" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4M6 10l6-6 6 6M4 20h16"/></svg>Upload Your Video</a>
+          <p class="or">Or send it another way:</p>
+          <div class="send-btns">
+            <a class="btn btn-outline" href="sms:+18479608283?&amp;body=Hi%20Coach%20TJ!%20I'd%20like%20remote%20coaching.%0APlayer%20name%3A%20%0AAge%3A%20%0AHitting%20or%20Catching%3A%20%0APackage%3A%20%0AWhat%20we%20want%20to%20work%20on%3A%20">Text Your Video</a>
+            <a class="btn btn-outline" href="mailto:tjbaseballgroup@yahoo.com?subject=Remote%20Coaching%20Video&amp;body=Player%20name%3A%20%0AAge%3A%20%0AHitting%20or%20Catching%3A%20%0APackage%20(Video%20Breakdown%20%2F%20Monthly%20Program)%3A%20%0AWhat%20we%20want%20to%20work%20on%3A%20%0A%0A(Attach%20your%20videos%2C%20or%20paste%20a%20Google%20Drive%20or%20iCloud%20link%20if%20they're%20too%20big.)">Email Your Video</a>
+          </div>
+          <p class="small">Texting or emailing? Big videos may not go through, so the upload button is best. Want a live session? <a href="#book">Book it on the calendar below.</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="about" class="about">
     <div class="wrap">
       <h2>About Coach TJ</h2>
@@ -342,6 +496,19 @@
 </footer>
 
 <script>
+  // Stripe payment links. Paste each link between the quotes.
+  // Until a link is added, that button scrolls to the video upload section instead.
+  var STRIPE_LINKS = {
+    single:  "https://buy.stripe.com/fZueVd3AAe0dddO3DkdnW00",
+    starter: "https://buy.stripe.com/4gM5kDc7609nflW2zgdnW01",
+    pro:     "https://buy.stripe.com/dRm00j4EEaO11v6gq6dnW02",
+    elite:   "https://buy.stripe.com/fZu28r5II6xL4HiehYdnW04"
+  };
+  document.querySelectorAll("[data-plan]").forEach(function (b) {
+    var url = STRIPE_LINKS[b.getAttribute("data-plan")];
+    if (url) { b.href = url; b.target = "_blank"; b.rel = "noopener"; }
+  });
+
   document.getElementById("yr").textContent = new Date().getFullYear();
 
   // Mobile menu
