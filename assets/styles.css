@@ -281,3 +281,12 @@
   .copy-btn { font: 700 12px Montserrat, sans-serif; letter-spacing: .1em; text-transform: uppercase; background: var(--ink); color: var(--paper); border: 0; border-radius: 4px; padding: 8px 14px; cursor: pointer; }
   .copy-box textarea { width: 100%; font: 14px/1.5 Inter, sans-serif; border: 1px solid var(--line); border-radius: 6px; padding: 10px; background: #fff; color: var(--text); resize: vertical; }
   @media (max-width: 860px) { .copy-grid { grid-template-columns: 1fr; } }
+
+  /* ---- Legal pages ---- */
+  .legal .wrap { max-width: 820px; }
+  .legal h2 { font-size: 18px; margin: 40px 0 12px; }
+  .legal p, .legal li { font-size: 16px; }
+  .legal ul { padding-left: 20px; }
+  .legal li { margin-bottom: 8px; }
+  .site-footer .copy a { color: #c9c5bc; text-decoration: underline; }
+  .copy-sub { font-size: 15px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); margin: 28px 0 12px; }
